@@ -40,15 +40,15 @@
 4. [x] Errors on the server side that occur during the processing of a request should be handled and processed correctly (server should answer with `status code` **500** and corresponding human-friendly message)
 5. [x] Value of `port` on which application is running should be stored in `.env` file
 6. [x] There should be 2 modes of running application (**development** and **production**)
-   [x]  The application is run in development mode using `nodemon` or `ts-node-dev` (there is a `npm` script `start:dev`)
-   [x]  The application is run in production mode (there is a `npm` script `start:prod` that starts the build process and then runs the bundled file)
+  - [x]  The application is run in development mode using `nodemon` or `ts-node-dev` (there is a `npm` script `start:dev`)
+ -  [x]  The application is run in production mode (there is a `npm` script `start:prod` that starts the build process and then runs the bundled file)
 7. There could be some tests for API (not less than **3** scenarios). Example of test scenario
-   [x] 1. Get all records with a `GET` `api/users` request (an empty array is expected)
-   [x] 2. A new object is created by a `POST` `api/users` request (a response containing newly created record is expected)
-   [x] 3. With a `GET` `api/user/{userId}` request, we try to get the created  record by its `id` (the created record is expected)
-   [x] 4. We try to update the created record with a `PUT` `api/users/{userId}`request (a response is expected containing an updated object with the same `id`)
-    [x] 5. With a `DELETE` `api/users/{userId}` request, we delete the created object by `id` (confirmation of successful deletion is expected)
-    [x] 6. With a `GET` `api/users/{userId}` request, we are trying to get a deleted object by `id` (expected answer is that there is no such object)
+ -  [x] 1. Get all records with a `GET` `api/users` request (an empty array is expected)
+ -  [x] 2. A new object is created by a `POST` `api/users` request (a response containing newly created record is expected)
+  - [x] 3. With a `GET` `api/user/{userId}` request, we try to get the created  record by its `id` (the created record is expected)
+  - [x] 4. We try to update the created record with a `PUT` `api/users/{userId}`request (a response is expected containing an updated object with the same `id`)
+   - [x] 5. With a `DELETE` `api/users/{userId}` request, we delete the created object by `id` (confirmation of successful deletion is expected)
+  -  [x] 6. With a `GET` `api/users/{userId}` request, we are trying to get a deleted object by `id` (expected answer is that there is no such object)
 8. There could be implemented horizontal scaling for application, there should be `npm` script `start:multi` that starts multiple instances of your application using the Node.js `Cluster` API (equal to the number of available parallelism - 1 on the host machine, each listening on port PORT + n) with a **load balancer** that distributes requests across them (using Round-robin algorithm). For example: available parallelism is 4, `PORT` is 4000. On run `npm run start:multi` it works following way
 - On `localhost:4000/api` load balancer is listening for requests
 - On `localhost:4001/api`, `localhost:4002/api`, `localhost:4003/api` workers are listening for requests from load balancer
