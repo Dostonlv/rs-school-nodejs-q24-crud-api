@@ -14,35 +14,35 @@
 - Prefer asynchronous API whenever possible
 
 1. Implemented endpoint `api/users`
-   [x] - **GET** `api/users` is used to get all persons
+   [x]  **GET** `api/users` is used to get all persons
         - Server should answer with `status code` **200** and all users records
-   [x] - **GET** `api/users/{userId}` 
+   [x]  **GET** `api/users/{userId}` 
         - Server should answer with `status code` **200** and record with `id === userId` if it exists
         - Server should answer with `status code` **400** and corresponding message if `userId` is invalid (not `uuid`)
         - Server should answer with `status code` **404** and corresponding message if record with `id === userId` doesn't exist
-    [x] - **POST** `api/users` is used to create record about new user and store it in database
+    [x]  **POST** `api/users` is used to create record about new user and store it in database
         - Server should answer with `status code` **201** and newly created record
         - Server should answer with `status code` **400** and corresponding message if request `body` does not contain **required** fields
-    [x] - **PUT** `api/users/{userId}` is used to update existing user
+    [x]  **PUT** `api/users/{userId}` is used to update existing user
         - Server should answer with` status code` **200** and updated record
         - Server should answer with` status code` **400** and corresponding message if `userId` is invalid (not `uuid`)
         - Server should answer with` status code` **404** and corresponding message if record with `id === userId` doesn't exist
-    [x] - **DELETE** `api/users/{userId}` is used to delete existing user from database
+    [x] **DELETE** `api/users/{userId}` is used to delete existing user from database
         - Server should answer with `status code` **204** if the record is found and deleted
         - Server should answer with `status code` **400** and corresponding message if `userId` is invalid (not `uuid`)
         - Server should answer with `status code` **404** and corresponding message if record with `id === userId` doesn't exist
 2. Users are stored as `objects` that have following properties:
-   [x] - `id` — unique identifier (`string`, `uuid`) generated on server side
-   [x] - `username` — user's name (`string`, **required**)
-   [x] - `age` — user's age (`number`, **required**)
-   [x] - `hobbies` — user's hobbies (`array` of `strings` or empty `array`, **required**)
+   [x]  `id` — unique identifier (`string`, `uuid`) generated on server side
+   [x]  `username` — user's name (`string`, **required**)
+   [x]  `age` — user's age (`number`, **required**)
+   [x]  `hobbies` — user's hobbies (`array` of `strings` or empty `array`, **required**)
 3. [x] Requests to non-existing endpoints (e.g. `some-non/existing/resource`) should be handled (server should answer with `status code` **404** and corresponding human-friendly message)
 4. [x] Errors on the server side that occur during the processing of a request should be handled and processed correctly (server should answer with `status code` **500** and corresponding human-friendly message)
 5. [x] Value of `port` on which application is running should be stored in `.env` file
-6. [x] There should be 2 modes of running application (**development** and **production**):
-   [x] - The application is run in development mode using `nodemon` or `ts-node-dev` (there is a `npm` script `start:dev`)
-   [x] - The application is run in production mode (there is a `npm` script `start:prod` that starts the build process and then runs the bundled file)
-7. There could be some tests for API (not less than **3** scenarios). Example of test scenario:
+6. [x] There should be 2 modes of running application (**development** and **production**)
+   [x]  The application is run in development mode using `nodemon` or `ts-node-dev` (there is a `npm` script `start:dev`)
+   [x]  The application is run in production mode (there is a `npm` script `start:prod` that starts the build process and then runs the bundled file)
+7. There could be some tests for API (not less than **3** scenarios). Example of test scenario
    [x] 1. Get all records with a `GET` `api/users` request (an empty array is expected)
    [x] 2. A new object is created by a `POST` `api/users` request (a response containing newly created record is expected)
    [x] 3. With a `GET` `api/user/{userId}` request, we try to get the created  record by its `id` (the created record is expected)
