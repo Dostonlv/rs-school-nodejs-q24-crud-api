@@ -13,7 +13,7 @@
 - Use 22.x.x version (22.9.0 or upper) of Node.js
 - Prefer asynchronous API whenever possible
 
-1. Implemented endpoint `api/users`:
+1. Implemented endpoint `api/users`
    [x] - **GET** `api/users` is used to get all persons
         - Server should answer with `status code` **200** and all users records
    [x] - **GET** `api/users/{userId}` 
