@@ -32,8 +32,8 @@
         - Server should answer with `status code` **400** and corresponding message if `userId` is invalid (not `uuid`)
         - Server should answer with `status code` **404** and corresponding message if record with `id === userId` doesn't exist
 2. Users are stored as `objects` that have following properties
-   [x]  `id` — unique identifier (`string`, `uuid`) generated on server side
-   [x]  `username` — user's name (`string`, **required**)
+  - [x]  `id` — unique identifier (`string`, `uuid`) generated on server side
+  - [x]  `username` — user's name (`string`, **required**)
    [x]  `age` — user's age (`number`, **required**)
    [x]  `hobbies` — user's hobbies (`array` of `strings` or empty `array`, **required**)
 3. [x] Requests to non-existing endpoints (e.g. `some-non/existing/resource`) should be handled (server should answer with `status code` **404** and corresponding human-friendly message)
