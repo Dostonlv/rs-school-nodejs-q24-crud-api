@@ -52,7 +52,7 @@ if (cluster.isPrimary) {
     cluster.fork();
   });
 } else {
-  const app = createServer(users); // Call the imported function
+  const app = createServer(); // Call the imported function
 
   const workerId = cluster.worker ? cluster.worker.id : 1;
   const workerPort = PORT + workerId;
