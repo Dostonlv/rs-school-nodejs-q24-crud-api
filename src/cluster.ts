@@ -1,12 +1,12 @@
 import cluster from 'cluster';
 import os from 'os';
 import http from 'http';
-import createServer from './server'; // Use import instead of require
+import createServer from './server'; 
 
 const numCPUs = os.cpus().length;
 const PORT = parseInt(process.env.PORT || '4000', 10);
 
-const users: Record<string, any> = {}; // Shared user data
+const users: Record<string, any> = {};
 
 if (cluster.isPrimary) {
   console.log(`Master ${process.pid} is running`);

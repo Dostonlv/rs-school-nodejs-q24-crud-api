@@ -9,6 +9,7 @@ interface User {
   hobbies: string[];
 }
 
+
 let users: User[] = [];
 
 export const getAllUsers = () => users;

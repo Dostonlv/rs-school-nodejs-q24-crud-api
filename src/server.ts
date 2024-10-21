@@ -1,14 +1,14 @@
 import http from 'http';
 import { parse } from 'url';
 import { IncomingMessage, ServerResponse } from 'http';
+import { v4 as uuidv4 } from 'uuid';
 
 const createServer = (users: Record<string, any>) => {
   const requestHandler = (req: IncomingMessage, res: ServerResponse) => {
     const { method, url } = req;
     const parsedUrl = parse(url || '', true);
-    const userId = parsedUrl.pathname?.split('/')[3]; // Get userId from the URL
+    const userId = parsedUrl.pathname?.split('/')[3]; 
 
-    // Helper function to send JSON response
     const sendJson = (data: any, statusCode: number) => {
       res.writeHead(statusCode, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify(data));
@@ -34,7 +34,7 @@ const createServer = (users: Record<string, any>) => {
       req.on('end', () => {
         const { username, age, hobbies } = JSON.parse(body);
         if (username && age !== undefined && hobbies !== undefined) {
-          const id = new Date().getTime().toString(); // Simple ID generation
+          const id = uuidv4();
           users[id] = { id, username, age, hobbies };
           sendJson(users[id], 201);
         } else {
