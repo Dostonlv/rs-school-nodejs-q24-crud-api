@@ -35,13 +35,13 @@
   - [x]  `id` — unique identifier (`string`, `uuid`) generated on server side
   - [x]  `username` — user's name (`string`, **required**)
   - [x]  `age` — user's age (`number`, **required**)
-  -  [ ]  `hobbies` — user's hobbies (`array` of `strings` or empty `array`, **required**)
+  -  [x]  `hobbies` — user's hobbies (`array` of `strings` or empty `array`, **required**)
 3. [x] Requests to non-existing endpoints (e.g. `some-non/existing/resource`) should be handled (server should answer with `status code` **404** and corresponding human-friendly message)
 4. [x] Errors on the server side that occur during the processing of a request should be handled and processed correctly (server should answer with `status code` **500** and corresponding human-friendly message)
 5. [x] Value of `port` on which application is running should be stored in `.env` file
 6. [ ] There should be 2 modes of running application (**development** and **production**)
   - [x]  The application is run in development mode using `nodemon` or `ts-node-dev` (there is a `npm` script `start:dev`)
- -  [ ]  The application is run in production mode (there is a `npm` script `start:prod` that starts the build process and then runs the bundled file)
+ -  [x]  The application is run in production mode (there is a `npm` script `start:prod` that starts the build process and then runs the bundled file)
 7. There could be some tests for API (not less than **3** scenarios). Example of test scenario
  -  [x] 1. Get all records with a `GET` `api/users` request (an empty array is expected)
  -  [x] 2. A new object is created by a `POST` `api/users` request (a response containing newly created record is expected)

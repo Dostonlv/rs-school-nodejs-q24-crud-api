@@ -1,10 +1,11 @@
 {
   "name": "crud-api",
   "version": "1.0.0",
-  "main": "dist/server.js",
+  "main": "build/index.js",
   "scripts": {
     "start:dev": "nodemon src/index.ts",
-    "start:multi": "ts-node ./src/cluster.ts"
+    "start:multi": "ts-node ./src/cluster.ts",
+    "start:prod": "tsc && node ."
   },
   "dependencies": {
     "dotenv": "^16.0.3",
